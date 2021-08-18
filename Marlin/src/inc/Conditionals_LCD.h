@@ -739,6 +739,7 @@
   #endif
 
   // Always disable probe pin inverting for BLTouch
+  /* Dustin Commented Out
   #if Z_MIN_PROBE_ENDSTOP_INVERTING
     #error "BLTOUCH requires Z_MIN_PROBE_ENDSTOP_INVERTING set to false. Please update your Configuration.h file."
   #endif
@@ -748,6 +749,7 @@
       #error "BLTOUCH requires Z_MIN_ENDSTOP_INVERTING set to false. Please update your Configuration.h file."
     #endif
   #endif
+  */
 #endif
 
 /**

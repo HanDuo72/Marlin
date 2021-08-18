@@ -54,9 +54,9 @@
 //
 // Z Probe
 //
-#ifndef Z_MIN_PROBE_PIN
-  #define Z_MIN_PROBE_PIN                  P1_22
-#endif
+//#ifndef Z_MIN_PROBE_PIN
+//  #define Z_MIN_PROBE_PIN                  P1_22
+//#endif
 
 //
 // Filament Runout Sensor

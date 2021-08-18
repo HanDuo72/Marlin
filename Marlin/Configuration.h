@@ -106,7 +106,7 @@
  * 
  * Modified by Dustin for the Computer USB Interface
  */ 
-#define SERIAL_PORT -1
+#define SERIAL_PORT -1  //USB
 
 /**
  * Serial Port Baud Rate
