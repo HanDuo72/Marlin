@@ -129,7 +129,7 @@
  * 
  * Modified by Dustin for the TFT USB Interface
  */
-#define SERIAL_PORT_2 0
+// #define SERIAL_PORT_2 0    // Uncomment for TFT Display
 //#define BAUDRATE_2 250000   // Enable to override BAUDRATE
 
 /**
