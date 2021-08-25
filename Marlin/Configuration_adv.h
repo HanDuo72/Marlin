@@ -1871,7 +1871,7 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-#define LIN_ADVANCE
+//#define LIN_ADVANCE // Disabled per https://www.reddit.com/r/BIGTREETECH/comments/ffxpq8/skr_13_tmc2208_uart_mode_under_extrusion_problem/
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
   #define LIN_ADVANCE_K 0.6     // Unit: mm compression per 1mm/s extruder speed
@@ -2084,7 +2084,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-//#define MINIMUM_STEPPER_PULSE 2
+#define MINIMUM_STEPPER_PULSE 1 // defualt is 2 changed per https://www.reddit.com/r/BIGTREETECH/comments/ffxpq8/skr_13_tmc2208_uart_mode_under_extrusion_problem/
 
 /**
  * Maximum stepping rate (in Hz) the stepper driver allows
@@ -2938,7 +2938,7 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
-  //#define SQUARE_WAVE_STEPPING
+  #define SQUARE_WAVE_STEPPING // enabled per https://www.reddit.com/r/BIGTREETECH/comments/ffxpq8/skr_13_tmc2208_uart_mode_under_extrusion_problem/
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.
