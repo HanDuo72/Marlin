@@ -72,42 +72,6 @@ struct IF<true, L, R> { typedef L type; };
 #endif
 
 //
-// Conditional type assignment magic. For example...
-//
-// typename IF<(MYOPT==12), int, float>::type myvar;
-//
-template <bool, class L, class R>
-struct IF { typedef R type; };
-template <class L, class R>
-struct IF<true, L, R> { typedef L type; };
-
-#define LINEAR_AXIS_GANG(V...) GANG_N(LINEAR_AXES, V)
-#define LINEAR_AXIS_CODE(V...) CODE_N(LINEAR_AXES, V)
-#define LINEAR_AXIS_LIST(V...) LIST_N(LINEAR_AXES, V)
-#define LINEAR_AXIS_ARRAY(V...) { LINEAR_AXIS_LIST(V) }
-#define LINEAR_AXIS_ARGS(T...) LINEAR_AXIS_LIST(T x, T y, T z, T i, T j, T k)
-#define LINEAR_AXIS_ELEM(O)    LINEAR_AXIS_LIST(O.x, O.y, O.z, O.i, O.j, O.k)
-#define LINEAR_AXIS_DEFS(T,V)  LINEAR_AXIS_LIST(T x=V, T y=V, T z=V, T i=V, T j=V, T k=V)
-
-#define LOGICAL_AXIS_GANG(E,V...) LINEAR_AXIS_GANG(V) GANG_ITEM_E(E)
-#define LOGICAL_AXIS_CODE(E,V...) LINEAR_AXIS_CODE(V) CODE_ITEM_E(E)
-#define LOGICAL_AXIS_LIST(E,V...) LINEAR_AXIS_LIST(V) LIST_ITEM_E(E)
-#define LOGICAL_AXIS_ARRAY(E,V...) { LOGICAL_AXIS_LIST(E,V) }
-#define LOGICAL_AXIS_ARGS(T...) LOGICAL_AXIS_LIST(T e, T x, T y, T z, T i, T j, T k)
-#define LOGICAL_AXIS_ELEM(O)    LOGICAL_AXIS_LIST(O.e, O.x, O.y, O.z, O.i, O.j, O.k)
-#define LOGICAL_AXIS_DECL(T,V)  LOGICAL_AXIS_LIST(T e=V, T x=V, T y=V, T z=V, T i=V, T j=V, T k=V)
-
-#if HAS_EXTRUDERS
-  #define LIST_ITEM_E(N) , N
-  #define CODE_ITEM_E(N) ; N
-  #define GANG_ITEM_E(N) N
-#else
-  #define LIST_ITEM_E(N)
-  #define CODE_ITEM_E(N)
-  #define GANG_ITEM_E(N)
-#endif
-
-//
 // Enumerated axis indices
 //
 //  - X_AXIS, Y_AXIS, and Z_AXIS should be used for axes in Cartesian space

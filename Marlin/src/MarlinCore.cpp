@@ -1159,11 +1159,6 @@ void setup() {
     JTAGSWD_RESET();
   #endif
 
-  #ifdef JTAGSWD_RESET
-    SETUP_LOG("JTAGSWD_RESET");
-    JTAGSWD_RESET();
-  #endif
-
   #if EITHER(DISABLE_DEBUG, DISABLE_JTAG)
     delay(10);
     // Disable any hardware debug to free up pins for IO

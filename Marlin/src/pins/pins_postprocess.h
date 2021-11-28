@@ -991,9 +991,6 @@
     #define AUTO_ASSIGNED_Z4_DIAG 1
     #undef Z4_DIAG_PIN // Defined in Conditionals_post.h based on Z4_USE_ENDSTOP
   #endif
-  #define I_E_INDEX INCREMENT(Z4_E_INDEX)
-#else
-  #define I_E_INDEX Z4_E_INDEX
 #endif
 
 #ifndef Z4_CS_PIN

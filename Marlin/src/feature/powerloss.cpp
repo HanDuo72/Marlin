@@ -625,12 +625,6 @@ void PrintJobRecovery::resume() {
           DEBUG_EOL();
         #endif
 
-        #if DISABLED(NO_VOLUMETRICS)
-          DEBUG_ECHOPGM("filament_size:");
-          LOOP_L_N(i, EXTRUDERS) DEBUG_ECHOLNPAIR(" ", info.filament_size[i]);
-          DEBUG_EOL();
-        #endif
-
         #if HAS_HOTEND
           DEBUG_ECHOPGM("target_temperature: ");
           HOTEND_LOOP() {

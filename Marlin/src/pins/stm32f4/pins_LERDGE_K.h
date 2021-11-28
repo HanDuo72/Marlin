@@ -114,13 +114,6 @@
 //  #define Z2_CS_PIN                       PE0
 //#endif
 
-//#define E2_STEP_PIN                       PF4  // best guess
-//#define E2_DIR_PIN                        PF3  // best guess
-//#define E2_ENABLE_PIN                     PF5  // best guess
-//#ifndef E2_CS_PIN
-//  #define E2_CS_PIN                       PB2  // best guess
-//#endif
-
 #if HAS_TMC_UART
   /**
    * TMC2208/TMC2209 stepper drivers

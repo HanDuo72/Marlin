@@ -94,13 +94,6 @@ bool ZOffsetScreen::wizardRunning() {
   return getAxisPosition_mm(Z) == mydata.z;
 }
 
-bool ZOffsetScreen::wizardRunning() {
-  // We can't store state after the call to the AlertBox, so
-  // check whether the current Z position equals mydata.z in order
-  // to know whether the user started the wizard.
-  return getAxisPosition_mm(Z) == mydata.z;
-}
-
 bool ZOffsetScreen::onTouchHeld(uint8_t tag) {
   const int16_t steps =   TERN(BABYSTEPPING, mmToWholeSteps(getIncrement(), Z), 0);
   const float increment = TERN(BABYSTEPPING, mmFromWholeSteps(steps, Z), getIncrement());

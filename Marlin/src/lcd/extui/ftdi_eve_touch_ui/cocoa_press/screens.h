@@ -108,7 +108,6 @@ enum {
 #include "../generic/display_tuning_screen.h"
 #include "../generic/statistics_screen.h"
 #include "../generic/stepper_current_screen.h"
-//#include "../generic/leveling_menu.h"
 #include "../generic/z_offset_screen.h"
 #include "../generic/bed_mesh_base.h"
 #include "../generic/bed_mesh_view_screen.h"

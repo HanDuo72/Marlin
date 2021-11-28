@@ -743,51 +743,6 @@ void reset_stepper_drivers();    // Called by settings.load / settings.reset
   #define DISABLE_STEPPER_K() TERN(HAS_K_ENABLE, K_ENABLE_WRITE(!K_ENABLE_ON), NOOP)
 #endif
 
-#ifndef ENABLE_STEPPER_I
-  #if HAS_I_ENABLE
-    #define  ENABLE_STEPPER_I() I_ENABLE_WRITE( I_ENABLE_ON)
-  #else
-    #define  ENABLE_STEPPER_I() NOOP
-  #endif
-#endif
-#ifndef DISABLE_STEPPER_I
-  #if HAS_I_ENABLE
-    #define DISABLE_STEPPER_I() I_ENABLE_WRITE(!I_ENABLE_ON)
-  #else
-    #define DISABLE_STEPPER_I() NOOP
-  #endif
-#endif
-
-#ifndef ENABLE_STEPPER_J
-  #if HAS_J_ENABLE
-    #define  ENABLE_STEPPER_J() J_ENABLE_WRITE( J_ENABLE_ON)
-  #else
-    #define  ENABLE_STEPPER_J() NOOP
-  #endif
-#endif
-#ifndef DISABLE_STEPPER_J
-  #if HAS_J_ENABLE
-    #define DISABLE_STEPPER_J() J_ENABLE_WRITE(!J_ENABLE_ON)
-  #else
-    #define DISABLE_STEPPER_J() NOOP
-  #endif
-#endif
-
-#ifndef ENABLE_STEPPER_K
-  #if HAS_K_ENABLE
-    #define  ENABLE_STEPPER_K() K_ENABLE_WRITE( K_ENABLE_ON)
-  #else
-    #define  ENABLE_STEPPER_K() NOOP
-  #endif
-#endif
-#ifndef DISABLE_STEPPER_K
-  #if HAS_K_ENABLE
-    #define DISABLE_STEPPER_K() K_ENABLE_WRITE(!K_ENABLE_ON)
-  #else
-    #define DISABLE_STEPPER_K() NOOP
-  #endif
-#endif
-
 #ifndef ENABLE_STEPPER_E0
   #define  ENABLE_STEPPER_E0() TERN(HAS_E0_ENABLE, E0_ENABLE_WRITE( E_ENABLE_ON), NOOP)
 #endif

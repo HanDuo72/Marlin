@@ -132,14 +132,6 @@
     #define E1_SERIAL_RX_PIN    E1_SERIAL_TX_PIN
   #endif
 
-  #if ENABLED(BTT_E3_RRF_IDEX_BOARD)
-    #define X2_SERIAL_TX_PIN           FPC12_PIN  // X2UART
-    #define X2_SERIAL_RX_PIN           FPC12_PIN  // X2UART
-
-    #define E1_SERIAL_TX_PIN            FPC6_PIN  // E1UART
-    #define E1_SERIAL_RX_PIN            FPC6_PIN  // E1UART
-  #endif
-
   // Reduce baud rate to improve software serial reliability
   #define TMC_BAUD_RATE 19200
 #endif

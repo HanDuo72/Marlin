@@ -122,6 +122,7 @@ if [ 1 = 1 ]; then
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
+
 #include <U8glib-HAL.h>
 
 #if defined(__AVR__) && ENABLED(NOT_EXTENDED_ISO10646_1_5X7)

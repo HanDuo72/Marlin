@@ -606,9 +606,6 @@
 constexpr float arm[] = AXIS_RELATIVE_MODES;
 static_assert(COUNT(arm) == LOGICAL_AXES, "AXIS_RELATIVE_MODES must contain " _LOGICAL_AXES_STR "elements.");
 
-constexpr float arm[] = AXIS_RELATIVE_MODES;
-static_assert(COUNT(arm) == LOGICAL_AXES, "AXIS_RELATIVE_MODES must contain " _LOGICAL_AXES_STR "elements.");
-
 /**
  * Probe temp compensation requirements
  */
@@ -1199,19 +1196,6 @@ static_assert(Y_MAX_LENGTH >= Y_BED_SIZE, "Movement bounds (Y_MIN_POS, Y_MAX_POS
     #error "MIXING_EXTRUDER is incompatible with SINGLENOZZLE."
   #elif ENABLED(DISABLE_INACTIVE_EXTRUDER)
     #error "MIXING_EXTRUDER is incompatible with DISABLE_INACTIVE_EXTRUDER."
-  #endif
-#endif
-
-/**
- * Dual E Steppers requirements
- */
-#if ENABLED(E_DUAL_STEPPER_DRIVERS)
-  #if EXTRUDERS > 1
-    #error "E_DUAL_STEPPER_DRIVERS can only be used with EXTRUDERS set to 1."
-  #elif ENABLED(MIXING_EXTRUDER)
-    #error "E_DUAL_STEPPER_DRIVERS is incompatible with MIXING_EXTRUDER."
-  #elif ENABLED(SWITCHING_EXTRUDER)
-    #error "E_DUAL_STEPPER_DRIVERS is incompatible with SWITCHING_EXTRUDER."
   #endif
 #endif
 
