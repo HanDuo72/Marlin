@@ -1909,7 +1909,15 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-//#define LIN_ADVANCE
+/**
+ * Dustin Info on Creality 4.2.7 Board with TMC2225 (repackaged 2208s)
+ * https://www.reddit.com/r/3Dprinting/comments/k28h6r/linear_advance_on_tmc2208tmc2225_with_stealthchop/
+ * per mamkuibal228 - "I'm using classic jerk and that apparently solves the issue."
+ * https://www.reddit.com/r/3Dprinting/comments/mbmbad/linear_advance_on_tmc2225_drivers/
+ * per bradsoto - "Yes the 2209/2226 being the newer model with more features and less bugs. (the square wave setting being a workaround for linear advance on 2208/2225)"
+ * "Sorry for the delay, u believe you can just comment out define STEALTH_CHOP and enable SQUARE WAVE STEPPING in Marlin."
+ * /
+#define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
   #define LIN_ADVANCE_K 0.22    // Unit: mm compression per 1mm/s extruder speed
