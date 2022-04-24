@@ -71,7 +71,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(rubienr, Creality Ender-5 Plus)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Dustin Mets, Ender-5 Plus SKR2)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -98,8 +98,8 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define X_MAX_PIN  3 // creality connects X_MAX switch to X_MIN(_PIN) motherbard connector
-  #define Y_MAX_PIN 14 // creality connects Y_MAX switch to Y_MIN(_PIN) motherbard connector																						
+//  #define X_MAX_PIN  3 // creality connects X_MAX switch to X_MIN(_PIN) motherbard connector
+//  #define Y_MAX_PIN 14 // creality connects Y_MAX switch to Y_MIN(_PIN) motherbard connector																						
   #define MOTHERBOARD BOARD_BTT_SKR_V2_0_REV_B 
 #endif
 
@@ -113,7 +113,7 @@
  * 
  * Modified by Dustin for the Computer USB Interface
  */ 
-#define SERIAL_PORT -1  //USB
+#define SERIAL_PORT 1         // TFT
 
 /**
  * Serial Port Baud Rate
@@ -134,7 +134,7 @@
  * Currently Ethernet (-2) is only supported on Teensy 4.1 boards.
  * :[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-//#define SERIAL_PORT_2 -1
+#define SERIAL_PORT_2 -1      //USB
 //#define BAUDRATE_2 250000   // Enable to override BAUDRATE
 
 /**
@@ -142,7 +142,7 @@
  * Currently only supported for AVR, DUE, LPC1768/9 and STM32/STM32F1
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-//#define SERIAL_PORT_3 1
+#define SERIAL_PORT_3 0       // Helephino :) Dustins 
 //#define BAUDRATE_3 250000   // Enable to override BAUDRATE
 
 // Enable the Bluetooth serial interface on AT90USB devices
@@ -175,52 +175,19 @@
  *             MICROSTEP_MODES, MANUAL_FEEDRATE
  *
  * :[3, 4, 5, 6, 7, 8, 9]
-   
-					   
-
-   
-								  
-																
-							 
-										
-										
-										
-											  
-											  
-											  
-															 
-								   
+ 
  */
 					
 //#define NUM_AXES 3
-	  
-					
-														   
-	  
-					
-														   
-	  
 
 /**
- * Additional Axis Settings
-												
-															 
+ * Additional Axis Settings											 
  *
  * Define AXISn_ROTATES for all axes that rotate or pivot.
  * Rotational axis coordinates are expressed in degrees.
-												 
-																
-															 
-											   
  *
  * AXISn_NAME defines the letter used to refer to the axis in (most) G-code commands.
  * By convention the names and roles are typically:
-					   
-
-   
-								  
-																
-							 
  *   'A' : Rotational axis parallel to X
  *   'B' : Rotational axis parallel to Y
  *   'C' : Rotational axis parallel to Z
@@ -242,35 +209,6 @@
   #define AXIS6_NAME 'C' // :['C', 'U', 'V', 'W']
   #define AXIS6_ROTATES
 #endif
-
-   
-												
-												
-															 
-  
-															   
-													   
-												 
-																
-															 
-											   
-  
-				
-   
-					   
-
-   
-								  
-																
-							 
-										
-										
-										
-											  
-											  
-											  
-															 
-								   
    
 #if NUM_AXES >= 7
   #define AXIS7_NAME 'U' // :['U', 'V', 'W']
@@ -1157,7 +1095,7 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-//#define CLASSIC_JERK
+#define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
@@ -1713,7 +1651,7 @@
   // After a runout is detected, continue printing this length of filament
   // before executing the runout script. Useful for a sensor at the end of
   // a feed tube. Requires 4 bytes SRAM per sensor, plus 4 bytes overhead.
-  //#define FILAMENT_RUNOUT_DISTANCE_MM 25
+  #define FILAMENT_RUNOUT_DISTANCE_MM 5
 
   #ifdef FILAMENT_RUNOUT_DISTANCE_MM
     // Enable this option to use an encoder disc that toggles the runout pin
@@ -1814,7 +1752,7 @@
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
-  //#define G26_MESH_VALIDATION
+  #define G26_MESH_VALIDATION
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for G26.
@@ -2586,7 +2524,7 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 //
 // K.3D Full Graphic Smart Controller
@@ -2693,7 +2631,7 @@
 // This is RAMPS-compatible using a single 10-pin connector.
 // (For CR-10 owners who want to replace the Melzi Creality board but retain the display)
 //
-#define CR10_STOCKDISPLAY
+//#define CR10_STOCKDISPLAY
 
 //
 // Ender-2 OEM display, a variant of the MKS_MINI_12864
