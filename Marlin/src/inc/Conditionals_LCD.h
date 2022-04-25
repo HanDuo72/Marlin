@@ -816,7 +816,7 @@
       #error "BLTOUCH requires Z_MIN_ENDSTOP_INVERTING set to false. Please update your Configuration.h file."
     #endif
   #endif
-  */
+  // */
 #endif
 
 /**
